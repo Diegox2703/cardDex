@@ -1,0 +1,38 @@
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px;
+    background-color: white;
+    z-index: 10;
+    transition: background .3s ease-in-out;
+
+    &.dark {
+        background-color: var(--background-color);
+    }
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+}
+
+.burger_btn {
+    display: none;
+}
+
+@media screen and (width <= 630px) {
+    .burger_btn {
+        display: block;
+    }
+}
+
+@media screen and (width <= 500px) {
+    .header {
+        padding: 5px 10px;
+    }
+}

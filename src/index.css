@@ -1,0 +1,9 @@
+@import './css/variables.css';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}

@@ -1,0 +1,97 @@
+.card_details_container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card_img_section {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 300px;
+    height: fit-content;
+    padding: 20px;
+}
+
+.card_img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 480px;
+    object-fit: contain;
+    transition: transform .1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.01);
+    }
+}
+
+.card_details_section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.pokemon_name_section, .updatedAt {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e2e2;
+}
+
+.pokemon_name, .cardmarket_title, .tcgplayer_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon_info_section, .prices {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.pokemon_info_section {
+    gap: 30px;
+}
+
+.pokemon_info { 
+    text-align: center;
+    flex-grow: 1;
+}
+
+.tcgplayer_section, .cardmarket_section, .set_section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.finishes_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardmarket_logo, .tcgplayer_logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+@media screen and (width < 725px) {
+    .card_img_section {
+        position: relative;
+        height: 400px;
+        top: 0;
+    }
+}
+
+@media screen and (width >= 1600px) {
+    .card_img {
+        max-height: 580px;
+    }
+}

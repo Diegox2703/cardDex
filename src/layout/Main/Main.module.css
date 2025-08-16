@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100dvh;
+    transition: background .3s ease-in-out;
+
+    &.dark {
+        background-color: var(--background-color);
+    }
+}
+
+.main_content {
+    width: 100%;
+    max-width: 1600px;
+}

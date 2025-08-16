@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Gajraj+One&family=Geo:ital@0;1&family=Jersey+15&family=Press+Start+2P&display=swap');
+
+:root {
+    --font-family-website-logo: "Jersey 15", sans-serif;
+    --primary-font-family: "Gajraj One", sans-serif;
+    --secondary-font-family: "Freeman", sans-serif;
+    --tertiary-font-family: "Geo", sans-serif;
+    --primary-color: #FF4242;
+    --secondary-color: #ff5c5c;
+    --tertiary-color: #848484;
+    --hover-color: #FFA1A1;
+    --text-color: #000;
+    --text-color-variant: #fafafa;
+    --background-color: #383838;
+    --box-shadow: 0px 2px 4px 3px #d6d6d6;
+    --box-shadow-2: 0px 1px 2px 2px #e2e2e2;
+}

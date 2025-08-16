@@ -1,0 +1,23 @@
+.nav_icon_button {
+    display: inline-block;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    
+    &.primary {
+        color: white;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
+
+    &.secondary {
+        color: var(--primary-color);
+
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
+
+}

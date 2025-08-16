@@ -1,0 +1,24 @@
+.card_container {
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+    height: fit-content;
+    scroll-snap-align: start;
+
+    &.standalone {
+        width: 210px;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.card_img {
+    width: 100%;
+}
+
+@media screen and (width <= 600px) {
+    .card_container.standalone {
+        width: auto;
+    }
+}
