@@ -7,6 +7,15 @@
 .finish {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &::after, &::before {
+        content: "";
+        height: 2px;
+        flex-grow: 1;
+        background-color: #e2e2e2;
+    }
 }
 
 .prices {
