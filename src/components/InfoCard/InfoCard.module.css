@@ -45,7 +45,7 @@
     max-width: 600px;
 }
 
-@media screen and (width < 670px) {
+@media screen and (width < 685px) {
     .info_section {
         align-items: center;
         text-align: center;

@@ -1,6 +1,7 @@
 .banner_section {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     padding: 20px;
@@ -36,15 +37,30 @@
     max-width: 500px;
 }
 
-@media screen and (width <= 669px) {
+@media screen and (width <= 685px) {
     .banner_description_section {
+        position: absolute;
         align-items: center;
         text-align: center;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .banner_section {
+        /* background-color: rgba(0, 0, 0, 0.164); */
+    }
+
+    .banner_image {
+        filter: brightness(.3);
     }
 }
 
 @media screen and (width < 500px) {
     .banner_section {
+        padding: 20px 10px;
+    }
+
+    .banner_description_section {
         padding: 20px 10px;
     }
 }

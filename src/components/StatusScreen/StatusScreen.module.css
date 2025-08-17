@@ -19,7 +19,7 @@
         position: fixed;
         top: 0;
         background-color: white;
-        z-index: 10;
+        z-index: 30;
     }
 
     &.full_width_overlay {
@@ -27,7 +27,7 @@
         top: 0;
         left: 0;
         background-color: rgba(37, 37, 37, 0.445);
-        z-index: 10;
+        z-index: 30;
     }
 }
 
