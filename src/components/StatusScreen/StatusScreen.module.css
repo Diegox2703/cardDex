@@ -31,14 +31,14 @@
     }
 }
 
-.status_img {
-    object-fit: contain;
-
+.status_image_wrapper {
     &.normal {
         width: 200px;
+        aspect-ratio: 4/3;
     }
 
     &.small {
         width: 150px;
+        aspect-ratio: 4/3;
     }
 }

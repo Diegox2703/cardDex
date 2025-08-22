@@ -1,6 +1,7 @@
 import Text from '../Text/Text'
 import Title from '../Title/Title'
 import Button from '../Button/Button'
+import LazyImage from '../LazyImage/LazyImage'
 import pokemonBanner from '../../assets/gifs/pokemon-banner.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons'
@@ -23,7 +24,9 @@ export default function Banner() {
         </div>
       </section>
       <section className={styles.banner_image_section}>
-        <img src={pokemonBanner} alt="banner-img" className={styles.banner_image}/>
+        <div className={styles.banner_image_wrapper}>
+          <LazyImage src={pokemonBanner} alt="banner-img" objectFit='contain'/>
+        </div>
       </section>
     </section>
   )

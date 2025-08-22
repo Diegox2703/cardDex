@@ -6,13 +6,20 @@ import Finish from '../Finish/Finish'
 import Price from '../Price/Price'
 import cardMarketLogo from '../../assets/images/cardmarket_logo.webp'
 import tcgPlayerLogo from '../../assets/images/tcgplayer_logo.webp'
+import LazyImage from '../LazyImage/LazyImage'
 import style from './CardDetails.module.css'
 
 export default function CardDetails({ openImageViewerFn, cardData }) {
   return (
     <div className={style.card_details_container}>
       <section className={style.card_img_section}>
-        <img src={cardData?.image} alt="card_img" className={style.card_img} onClick={() => openImageViewerFn(cardData?.image)}/>
+        <div className={style.card_img_wrapper}>
+            <LazyImage 
+                src={cardData?.image} 
+                alt={'card_img'} 
+                onClick={() => openImageViewerFn(cardData?.image)}
+            />
+        </div>
       </section>
       <section className={style.card_details_section}>
         <section className={style.pokemon_name_section}>

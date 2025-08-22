@@ -1,6 +1,7 @@
 import Title from '../Title/Title'
 import Text from '../Text/Text'
 import Tag from '../Tag/Tag'
+import LazyImage from '../LazyImage/LazyImage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
@@ -12,8 +13,10 @@ function Set({ logo, symbol, releaseDate, name, series, printedTotal, total, id 
     <article className={`${style.set_container}`}>
         <Link to={`/cards?set=${id}`}>
           <section className={style.set_img_section}>
-              <img src={logo} alt="set_img" className={style.set_img}/>
-              <img src={symbol} alt="set_symbol" className={style.set_symbol}/>
+              <LazyImage alt={'set_img'} src={logo} objectFit='contain'/>
+              <div className={style.set_symbol_container}>
+                <LazyImage alt={'set_symbol'} src={symbol} width={50} height={50} objectFit='contain'/>
+              </div>
               <button className={style.time_button}>
                   <FontAwesomeIcon icon={faClock} className={style.time_icon}/>
                   <span className={style.date}>{releaseDate}</span>

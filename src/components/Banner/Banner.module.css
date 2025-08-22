@@ -31,10 +31,10 @@
     gap: 10px;
 }
 
-.banner_image {
-    object-fit: contain;
+.banner_image_wrapper {
     width: 100%;
     max-width: 500px;
+    aspect-ratio: 4/4;
 }
 
 @media screen and (width <= 685px) {
@@ -46,11 +46,7 @@
         z-index: 10;
     }
 
-    .banner_section {
-        /* background-color: rgba(0, 0, 0, 0.164); */
-    }
-
-    .banner_image {
+    .banner_image_wrapper {
         filter: brightness(.3);
     }
 }
@@ -58,6 +54,7 @@
 @media screen and (width < 500px) {
     .banner_section {
         padding: 20px 10px;
+        height: 500px;
     }
 
     .banner_description_section {

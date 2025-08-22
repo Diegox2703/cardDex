@@ -16,11 +16,11 @@
     padding: 20px;
 }
 
-.card_img {
+.card_img_wrapper {
     width: 100%;
-    max-width: 500px;
-    max-height: 480px;
-    object-fit: contain;
+    height: 100%;
+    max-width: 350px;
+    aspect-ratio: 3/4;
     transition: transform .1s ease-in-out;
     cursor: pointer;
 
@@ -85,13 +85,16 @@
 @media screen and (width < 725px) {
     .card_img_section {
         position: relative;
-        height: 400px;
         top: 0;
+    }
+
+    .card_img_wrapper {
+        max-width: 280px;
     }
 }
 
 @media screen and (width >= 1600px) {
-    .card_img {
-        max-height: 580px;
+    .card_img_wrapper {
+        max-width: 480px;
     }
 }

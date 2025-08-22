@@ -1,19 +1,21 @@
 .card_container {
     transition: transform .2s ease-in-out;
     cursor: pointer;
-    height: fit-content;
     scroll-snap-align: start;
-
+    aspect-ratio: 3/4;
+    
     &.standalone {
         width: 210px;
     }
-
+    
     &:hover {
         transform: scale(1.02);
     }
 }
 
-.card_img {
+.card_link {
+    display: inline-block;
+    height: 100%;
     width: 100%;
 }
 

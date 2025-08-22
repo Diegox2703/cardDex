@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
+import LazyImage from '../LazyImage/LazyImage'
 import style from './Card.module.css'
 
 function Card({ cardImg, id, standalone }) {
   return (
     <article className={`${style.card_container} ${standalone ? style.standalone : ''}`}>
-        <Link to={`/card/${id}`}>
-            <img className={style.card_img} src={cardImg} alt="card_img"/>
+        <Link to={`/card/${id}`} className={style.card_link}>
+            <LazyImage alt={'card_image'} src={cardImg}/>
         </Link>
     </article>
   )

@@ -23,7 +23,6 @@ export default function Main() {
               <Route path='/card/:id' element={ <CardDetailsPage/> }/>
               <Route path='/' element={ <HomePage/> }/>
               <Route path='*' element={ <NoItemFound/> }/>
-              <Route path='/test' element={ <LoadingScreen loadingModalMode={'full_width_overlay'}/> }/>
           </Routes>
         </Suspense>
       </div>

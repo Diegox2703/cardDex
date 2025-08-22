@@ -17,13 +17,9 @@
 .set_img_section {
     position: relative;
     margin-bottom: 10px;
-    height: 130px;
-}
-
-.set_img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+    border-radius: 5px;
+    /* overflow: hidden; */
+    aspect-ratio: 3/1;
 }
 
 .time_button {
@@ -59,13 +55,11 @@
     font-size: 12px;
 }
 
-.set_symbol {
+.set_symbol_container {
     position: absolute;
     left: 0;
     bottom: -8px;
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+    z-index: 5;
 }
 
 .set_info_section {
