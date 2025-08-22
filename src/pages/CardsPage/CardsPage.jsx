@@ -9,8 +9,8 @@ import ScrollUpBtn from '../../components/ScrollUpBtn/ScrollUpBtn'
 import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import Tag from '../../components/Tag/Tag'
 import { useGetQueryParams } from '../../hooks/useGetQueryParams'
-import styles from './CardsPage.module.css'
 import NoItemFound from '../../components/NoItemFound/NoItemFound'
+import styles from './CardsPage.module.css'
 
 export default function CardsPage() {
   const { set, cardName, removeQueryParam } = useGetQueryParams()

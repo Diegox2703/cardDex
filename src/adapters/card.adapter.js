@@ -30,7 +30,7 @@ export const cardByIdAdapter = (card) => {
         image: card.images.large,
         tcgplayer: {
             updatedAt: card?.tcgplayer?.updatedAt,
-            finishes: Object.keys(card?.tcgplayer?.prices),
+            finishes: Object.keys(card?.tcgplayer?.prices || []),
             prices: card?.tcgplayer?.prices
         },
         cardmarket: {
