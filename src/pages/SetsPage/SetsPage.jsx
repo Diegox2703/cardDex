@@ -9,11 +9,13 @@ import ErrorScreen from '../../components/ErrorScreen/ErrorScreen'
 import ScrollUpBtn from '../../components/ScrollUpBtn/ScrollUpBtn'
 import gengar from '../../assets/gifs/gengar.webp'
 import styles from './SetsPage.module.css'
+import { useGetQueryParams } from '../../hooks/useGetQueryParams'
 
 export default function SetsPage() {
+  const { setName } = useGetQueryParams()
+
   const { 
     data, 
-    setQuery, 
     isFetchingNextPage, 
     isFetchNextPageError,
     hasNextPage, 
@@ -21,12 +23,12 @@ export default function SetsPage() {
     isLoading,
     isError,
     refetch
-  } = useGetSets(50)
+  } = useGetSets(setName, 50)
 
   return (
     <PageLayout>
       <div className={styles.searchbar_container}>
-        <SearchBar placeholder={'Search sets'} onChangeFn={setQuery}/>
+        <SearchBar placeholder={'Search sets'} queryParam={'setName'}/>
       </div>
       {
         isLoading ? <LoadingScreen loadingImage={gengar}/>

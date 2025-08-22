@@ -1,16 +1,9 @@
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query"
 import { getCardById, getCards, getCardsByName } from "../services/cards.service"
-import { useState } from "react"
-import { useDebounce } from "./useDebounce"
 
-export const useGetCards = ( setId, cardName, pageSize = 30 ) => {
-    const [nameSearch, setNameSearch] = useState('')
-    const [numberSearch, setNumberSearch] = useState('')
-    const debouncedName = useDebounce(nameSearch)
-    const debouncedNumber = useDebounce(numberSearch)
-
-    const infinityQuery = useInfiniteQuery({
-        queryKey: ['cards', { search: debouncedName, cardName, setId, number: debouncedNumber }],
+export const useGetCards = ( set, cardName, cardNumber, pageSize = 30 ) => {
+    return useInfiniteQuery({
+        queryKey: ['cards', { cardName, set, cardNumber }],
         queryFn: ({ pageParam, signal, queryKey }) => {
             const [, filterParams] = queryKey
             
@@ -22,8 +15,6 @@ export const useGetCards = ( setId, cardName, pageSize = 30 ) => {
         },
         refetchOnWindowFocus: false,
     })
-
-    return { ...infinityQuery, setNameSearch, setNumberSearch }
 }
 
 export const useGetCardById = (id) => {

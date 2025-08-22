@@ -13,12 +13,10 @@ import NoItemFound from '../../components/NoItemFound/NoItemFound'
 import styles from './CardsPage.module.css'
 
 export default function CardsPage() {
-  const { set, cardName, removeQueryParam } = useGetQueryParams()
+  const { set, cardName, cardNumber, removeQueryParam } = useGetQueryParams()
 
   const { 
     data, 
-    setNameSearch, 
-    setNumberSearch,
     fetchNextPage, 
     hasNextPage, 
     isFetchingNextPage, 
@@ -26,13 +24,13 @@ export default function CardsPage() {
     isError,
     refetch,
     isFetchNextPageError,
-  } = useGetCards(set, cardName, 50)
+  } = useGetCards(set, cardName, cardNumber, 50)
 
   return (
     <PageLayout>
       <div className={styles.seachbars_container}>
-        <SearchBar placeholder={'Search cards'} onChangeFn={setNameSearch}/>
-        <SearchBar placeholder={'Number'} onChangeFn={setNumberSearch} type='number' size='small' icon={faHashtag}/>
+        <SearchBar placeholder={'Search cards'} queryParam={'cardName'}/>
+        <SearchBar placeholder={'Number'} queryParam={'cardNumber'} type='number' size='small' icon={faHashtag}/>
       </div>
 
       {

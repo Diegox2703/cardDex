@@ -3,14 +3,13 @@ import { buildPokemonQuery } from '../util/buildPokemonQuery.js'
 import api from './api.js'
 
 export const getCards = async ({ filterParams, pageSize, signal, pageParam = 1 }) => {
-    const { search, cardName, setId, number } = filterParams
+    const { cardName, set, cardNumber } = filterParams
 
-    const nameQueryParam = search !== '' ? buildPokemonQuery('name', search) : 
-                           cardName ? buildPokemonQuery('name', cardName) : ''
+    const nameQueryParam = cardName ? buildPokemonQuery('name', cardName) : ''
 
-    const setQueryParam = setId ? `set.id:*${setId}*` : ''
+    const setQueryParam = set ? `set.id:*${set}*` : ''
 
-    const numberQueryParam = number !== '' ? `number:${number}` : ''
+    const numberQueryParam = cardNumber ? `number:${cardNumber}` : ''
 
     const { data } = await api.get(
         `/cards?page=${pageParam}&pageSize=${pageSize}&q=${nameQueryParam} ${setQueryParam} ${numberQueryParam}`, 

@@ -6,8 +6,13 @@ const [ searchParams, setSearchParams ] = useSearchParams()
 
   const removeQueryParam = (queryParam) => {
     searchParams.delete(queryParam)
+    setSearchParams(searchParams, { replace: true })
+  }
+
+  const setQueryParam = (queryParam, queryParamValue) => {
+    searchParams.set(queryParam, queryParamValue)
     setSearchParams(searchParams)
   }
 
-  return { ...paramsObj, removeQueryParam }
+  return { ...paramsObj, removeQueryParam, setQueryParam }
 }
