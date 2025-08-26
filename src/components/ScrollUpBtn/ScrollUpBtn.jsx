@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
-import { useScrollUp } from "../../hooks/useScrollUp";
+import { useScrollUpBtn } from "../../hooks/useScrollUpBtn";
 import Button from "../Button/Button";
 
 export default function ScrollUpBtn({
     scrollUpBtnVariant = 'primary',
     scrollUpBtnSize = 'normal',
 }) {
-  const { btnVisible, scrollUp } = useScrollUp()
+  const { btnVisible, scrollUp } = useScrollUpBtn()
 
   if (!btnVisible) return
 

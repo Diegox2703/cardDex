@@ -35,9 +35,7 @@ export default function SetsPage() {
         :
         isError && !data ? <ErrorScreen refetchFn={refetch}/>
         :
-        data?.pages[0]?.data.length > 0
-        ?
-        <SetsContainer setsData={data}/>
+        data?.pages[0]?.data.length > 0 ? <SetsContainer setsData={data}/>
         :
         <NoItemFound/>
       }

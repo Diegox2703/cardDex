@@ -70,7 +70,6 @@ export default function CardsPage() {
           isFetchingNextPage={isFetchingNextPage}
         />
       }
-
       <ScrollUpBtn/>
     </PageLayout>
   )

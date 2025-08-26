@@ -11,7 +11,7 @@ const [ searchParams, setSearchParams ] = useSearchParams()
 
   const setQueryParam = (queryParam, queryParamValue) => {
     searchParams.set(queryParam, queryParamValue)
-    setSearchParams(searchParams)
+    setSearchParams(searchParams, { replace: true })
   }
 
   return { ...paramsObj, removeQueryParam, setQueryParam }

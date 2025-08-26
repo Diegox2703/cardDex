@@ -10,6 +10,7 @@ import NoItemFound from '../components/NoItemFound/NoItemFound'
 import charizard from '../assets/gifs/charizard.webp'
 import charmanderDancing from '../assets/gifs/charmander-dancing.webp'
 import { lazy, Suspense } from 'react'
+import { useScrollUp } from '../hooks/useScrollUp'
 
 const ImageViewer = lazy(() => import('../components/ImageViewer/ImageViewer'))
 
@@ -17,10 +18,11 @@ export default function CardDetailsPage() {
   const { id } = useParams()
   const { isOpen, openImageViewer, closeImageViewer, image } = useImageViewer()
   const { data, isLoading, isError, error, refetch } = useGetCardById(id)
+  useScrollUp()
   
   if (isLoading) return <LoadingScreen loadingImage={charmanderDancing}/>
 
-  if (isError && error?.status === 404) return <NoItemFound/>
+  if (isError && error?.response?.status === 404) return <NoItemFound/>
 
   if (isError) return <ErrorScreen refetchFn={refetch}/>
 

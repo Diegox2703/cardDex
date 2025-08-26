@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 
-export const useScrollUp = (scrollAmount = 1000) => {
-    const [btnVisible, setBtnVisible] = useState(false)
-
-    const scrollUp = () => window.scrollTo({ behavior: "smooth", top: 0 })
-
-    function setBtnVisibility(){
-        const scrollPosition = window.scrollY
-    
-        if (scrollPosition >= scrollAmount) return setBtnVisible(true)
-        setBtnVisible(false)
-    } 
+export const useScrollUp = () => {
+    const { pathname } = useLocation()
 
     useEffect(() => {
-        window.addEventListener('scroll', setBtnVisibility)
-
-        return () => window.removeEventListener('scroll', setBtnVisibility)
-    }, [])
-
-    return { btnVisible, scrollUp }
+        window.scrollTo({ behavior: 'instant', top: 0 })
+    }, [pathname])
 }

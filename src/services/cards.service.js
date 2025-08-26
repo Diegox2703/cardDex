@@ -1,20 +1,15 @@
 import { cardAdapter, cardByIdAdapter } from '../adapters/card.adapter.js'
-import { buildPokemonQuery } from '../util/buildPokemonQuery.js'
-import api from './api.js'
+import api from '../config/axios.js'
 
 export const getCards = async ({ filterParams, pageSize, signal, pageParam = 1 }) => {
-    const { cardName, set, cardNumber } = filterParams
-
-    const nameQueryParam = cardName ? buildPokemonQuery('name', cardName) : ''
-
-    const setQueryParam = set ? `set.id:*${set}*` : ''
-
-    const numberQueryParam = cardNumber ? `number:${cardNumber}` : ''
-
-    const { data } = await api.get(
-        `/cards?page=${pageParam}&pageSize=${pageSize}&q=${nameQueryParam} ${setQueryParam} ${numberQueryParam}`, 
-        { signal }
-    )
+    const { data } = await api.get('/cards', { 
+        params: {
+            page: pageParam,
+            pageSize: pageSize,
+            ...filterParams
+        },
+        signal
+     })
     
     return {
         page: data.page,
@@ -25,9 +20,13 @@ export const getCards = async ({ filterParams, pageSize, signal, pageParam = 1 }
 }
 
 export const getCardsByName = async ({ name, signal, pageSize }) => { 
-    const nameQueryParam = buildPokemonQuery('name', name)
-
-    const { data } = await api.get(`/cards?pageSize=${pageSize}&q=${nameQueryParam}`, { signal })
+    const { data } = await api.get('/cards', { 
+        params: {
+            pageSize,
+            name
+        },
+        signal
+     })
     return {
         totalCount: data.totalCount,
         data: data.data.map(cardAdapter)
