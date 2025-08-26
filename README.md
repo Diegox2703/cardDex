@@ -19,5 +19,7 @@
 - Lazy loading de imagenes agregado.
 
 📍 Link al codigo en GitHub: https://github.com/Diegox2703/cardDex.git
+
 📍 Link al backend en Github: https://github.com/Diegox2703/cardDex-API.git
+
 📍 Link a la API usada: https://pokemontcg.io/
