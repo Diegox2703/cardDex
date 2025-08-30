@@ -19,14 +19,9 @@
 .card_img_wrapper {
     width: 100%;
     height: 100%;
-    max-width: 350px;
+    max-width: 300px;
     aspect-ratio: 3/4;
-    transition: transform .1s ease-in-out;
     cursor: pointer;
-
-    &:hover {
-        transform: scale(1.01);
-    }
 }
 
 .card_details_section {
@@ -95,6 +90,6 @@
 
 @media screen and (width >= 1600px) {
     .card_img_wrapper {
-        max-width: 480px;
+        max-width: 380px;
     }
 }

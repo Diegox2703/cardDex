@@ -7,23 +7,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { useDisableScroll } from '../../hooks/useDisableScroll'
 import useSideMenuStore from '../../store/useSideMenuStore'
+import { motion } from 'motion/react'
 
 export default function SideMenu() {
   const toggleSideMenu = useSideMenuStore((state) => state.toggleSideMenu)
   useDisableScroll()
 
   return (
-    <aside className={styles.side_menu_container}>
+    <motion.aside 
+      className={styles.side_menu_container}
+      initial={{ x: 200 }}
+      animate={{ x: 0 }}
+      exit={{ x: 640 }}
+    >
         <div className={styles.side_menu_header}>
           <Button size='small' onClickFn={toggleSideMenu}>
             <FontAwesomeIcon icon={faClose}/>
           </Button>
         </div>
-        <NavBar location='side_menu'/>
+        <NavBar/>
         <div className={styles.side_menu_footer}>
           <NavIconButton icon={faLinkedinIn} variant='secondary'/>
           <NavIconButton icon={faGithub} variant='secondary'/>
         </div>
-    </aside>
+    </motion.aside>
   )
 }

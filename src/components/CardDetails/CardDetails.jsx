@@ -7,19 +7,25 @@ import Price from '../Price/Price'
 import cardMarketLogo from '../../assets/images/cardmarket_logo.webp'
 import tcgPlayerLogo from '../../assets/images/tcgplayer_logo.webp'
 import LazyImage from '../LazyImage/LazyImage'
+import { motion } from 'motion/react'
 import style from './CardDetails.module.css'
 
 export default function CardDetails({ openImageViewerFn, cardData }) {
   return (
     <div className={style.card_details_container}>
       <section className={style.card_img_section}>
-        <div className={style.card_img_wrapper}>
+        <motion.div 
+            layoutId='card' 
+            className={style.card_img_wrapper}
+            whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.2, ease: 'easeIn' }}
+        >
             <LazyImage 
                 src={cardData?.image} 
                 alt={'card_img'} 
                 onClick={() => openImageViewerFn(cardData?.image)}
             />
-        </div>
+        </motion.div>
       </section>
       <section className={style.card_details_section}>
         <section className={style.pokemon_name_section}>

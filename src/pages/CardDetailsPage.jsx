@@ -11,6 +11,7 @@ import charizard from '../assets/gifs/charizard.webp'
 import charmanderDancing from '../assets/gifs/charmander-dancing.webp'
 import { lazy, Suspense } from 'react'
 import { useScrollUp } from '../hooks/useScrollUp'
+import { AnimatePresence } from 'motion/react'
 
 const ImageViewer = lazy(() => import('../components/ImageViewer/ImageViewer'))
 
@@ -36,7 +37,9 @@ export default function CardDetailsPage() {
           loadingTitle='Loading component...'
         /> 
       }>
-        { isOpen && <ImageViewer closeImageViewerFn={closeImageViewer} image={image}/> }
+        <AnimatePresence>
+          { isOpen && <ImageViewer closeImageViewerFn={closeImageViewer} image={image}/> }
+        </AnimatePresence>
       </Suspense>
       <Carousel cardName={data?.name}/>
     </PageLayout>
