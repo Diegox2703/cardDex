@@ -1,6 +1,6 @@
 export const cardAdapter = (card) => {
     return {
-        id: card.id,
+        id: card._id,
         image: card.images.small,
         setName: card.set.name
     }

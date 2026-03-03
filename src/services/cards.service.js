@@ -10,11 +10,10 @@ export const getCards = async ({ filterParams, pageSize, signal, pageParam = 1 }
         },
         signal
      })
-    
+
     return {
         page: data.page,
-        pageSize: data.pageSize,
-        totalPages: Math.ceil(data.totalCount / data.pageSize),
+        totalPages: data.totalPages,
         data: data.data.map(cardAdapter) 
     }
 }
