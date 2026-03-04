@@ -22,10 +22,14 @@ export const getCardsByName = async ({ name, signal, pageSize }) => {
     const { data } = await api.get('/cards', { 
         params: {
             pageSize,
-            name
+            name,
+            page: 1
         },
         signal
      })
+
+    console.log(data)
+
     return {
         totalCount: data.totalCount,
         data: data.data.map(cardAdapter)
@@ -34,6 +38,8 @@ export const getCardsByName = async ({ name, signal, pageSize }) => {
 
 export const getCardById = async ({ id, signal }) => {
     const { data } = await api.get(`/cards/${id}`, { signal })
+
+    console.log(data.data)
 
     return cardByIdAdapter(data.data)
 }
