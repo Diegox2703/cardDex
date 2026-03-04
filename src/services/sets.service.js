@@ -10,10 +10,10 @@ export const getSets = async ({ setName, pageParam = 1, pageSize, signal }) => {
         },
         signal
      })
+
     return {
         page: data.page,
-        pageSize: data.pageSize,
-        totalPages: Math.ceil(data.totalCount / data.pageSize),
+        totalPages: data.totalPages,
         data: data.data.map(setAdapter)
     }
 }
