@@ -3,7 +3,7 @@ import { getCardById, getCards, getCardsByName } from "../services/cards.service
 
 export const useGetCards = ( set, cardName, cardNumber, pageSize = 30 ) => {
     return useInfiniteQuery({
-        queryKey: ['cards', { name: cardName?.toLowerCase(), set, cardNumber }],
+        queryKey: ['cards', { name: cardName?.toLowerCase(), set, number: cardNumber }],
         queryFn: ({ pageParam, signal, queryKey }) => {
             const [, filterParams] = queryKey
             

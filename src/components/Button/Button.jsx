@@ -8,7 +8,8 @@ export default function Button({
   type = 'action', 
   redirectTo, 
   onClickFn,
-  floatingBtn
+  floatingBtn,
+  ...props
 }) {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Button({
             `${style.btn} ${style[variant]} ${style[size]} ${floatingBtn ? style.float : ''}`
           } 
           onClick={onClickFn}
+          {...props}
         >
             { children }
         </button>

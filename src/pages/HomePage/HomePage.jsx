@@ -10,7 +10,7 @@ export default function HomePage() {
       <Banner/>
       <InfoCard
         title={'Your Pokemon card encyclopedia'}
-        description={'Access a complete database of cards from every generation, from classic to the most recent. Check up-to-date prices, discover their rarity, type, health points, and view high-quality images. Stay up to date with the most sought-after editions for TCG collectors and players.'}
+        description={'Access a complete database of cards from every generation, from classic to the most recent. Discover their rarity, type, health points, and view high-quality images. Stay up to date with the most sought-after editions for TCG collectors and players.'}
         image={cardsImage}
         url={'/cards'}
         buttonText={'Explore Cards'}

@@ -14,11 +14,11 @@ export default function Banner() {
         <div className={styles.description}>
             <Text variant='tertiary' fontFamily='tertiary_font_family'>Pokemon Card App</Text>
             <Title>All Pokemon cards, in one place</Title>
-            <Text variant='text_color_variant' fontFamily='secondary_font_family'>Explore cards from all generations, check up-to-date prices, and find every set in seconds, here you'll find the information you need to understand, organize, and evaluate your collection.</Text>
+            <Text variant='text_color_variant' fontFamily='secondary_font_family'>Explore cards from all generations and find every set in seconds, here you'll find the information you need to understand, organize, and evaluate your collection.</Text>
         </div>
         <div className={styles.api_used_container}>
-            <Button type='link' redirectTo={'https://pokemontcg.io/'}>
-                API used here
+            <Button type='link' redirectTo={'https://github.com/PokemonTCG/pokemon-tcg-data.git'}>
+                Pokemon data used here
                 <FontAwesomeIcon icon={faSquareArrowUpRight}/>
             </Button>
         </div>

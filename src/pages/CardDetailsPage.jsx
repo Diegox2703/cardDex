@@ -27,6 +27,7 @@ export default function CardDetailsPage() {
 
   if (isError) return <ErrorScreen refetchFn={refetch}/>
 
+
   return (
     <PageLayout>
       <CardDetails openImageViewerFn={openImageViewer} cardData={data}/>
