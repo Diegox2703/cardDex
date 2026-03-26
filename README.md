@@ -13,4 +13,4 @@
 
 📍 Link al backend en Github: [https://github.com/Diegox2703/cardDex-API.git](https://github.com/Diegox2703/cardDex-API.git)
 
-📍 Link a la API usada: [https://pokemontcg.io/](https://github.com/PokemonTCG/pokemon-tcg-data.git)
+📍 Link al repo donde obtuve la data: [https://github.com/PokemonTCG/pokemon-tcg-data.git](https://github.com/PokemonTCG/pokemon-tcg-data.git)
