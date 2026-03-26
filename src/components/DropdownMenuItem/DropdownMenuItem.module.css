@@ -1,0 +1,19 @@
+.item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    font-family: var(--secondary-font-family);
+    cursor: pointer;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &.active {
+        background-color: var(--primary-color);
+        color: var(--text-color-variant);
+    }
+
+    &:hover {
+        background-color: var(--secondary-color);
+        color: var(--text-color-variant);
+    }
+}

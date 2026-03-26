@@ -1,0 +1,17 @@
+.dropdownmenu {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 10;
+    width: 300px;
+    border: 1px solid #dddddd;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+
+    ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+    }
+}
